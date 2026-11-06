@@ -1,0 +1,8 @@
+{
+  "name": "bot-leads-firefox",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test testes/*.test.mjs"
+  }
+}

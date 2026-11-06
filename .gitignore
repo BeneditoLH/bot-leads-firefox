@@ -1,0 +1,12 @@
+node_modules/
+.env
+.env.*
+!.env.example
+*.xlsx
+*.csv
+*.zip
+*.log
+resultado*
+Historico*
+historico*
+.clasp.json
