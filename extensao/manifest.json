@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "Automação escolar — Leads 2027",
+  "version": "1.0.3",
+  "description": "Atendimento de novos leads pelo WhatsApp Web, com fila e status no Google Sheets.",
+  "permissions": [
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://web.whatsapp.com/*",
+    "https://script.google.com/*",
+    "https://script.googleusercontent.com/*"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "action": {
+    "default_title": "Abrir painel de Leads 2027"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "leads-2027@example.invalid",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": [
+          "authenticationInfo",
+          "personallyIdentifyingInfo",
+          "personalCommunications",
+          "websiteContent"
+        ]
+      }
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://web.whatsapp.com/*"
+      ],
+      "js": [
+        "navigation-guard.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ]
+}
